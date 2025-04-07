@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SIT305_31PQuizApp</string>
+    <string name="submit">Submit</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="question_android_dev">Android is developed by?</string>
+    <string name="latest_android_version">Latest Android version?</string>
+    <string name="jetpack_is">Jetpack is?</string>
+    <string name="kotlin_is">Kotlin is?</string>
+    <string name="android_studio_based_on">Android Studio is based on?</string>
+    <string name="score_message">Well done, %1$s!\nYour Score: %2$d / %3$d</string>
+    <string name="question_progress">%1$d/%2$d</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="take_new_quiz">Take New Quiz</string>
+    <string name="_1_5">1/5</string>
+    <string name="question_appears_here">Question appears here</string>
+    <string name="sit305_quiz_app">SIT305 Quiz App</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="start">Start</string>
+</resources>
