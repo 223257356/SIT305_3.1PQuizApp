@@ -63,7 +63,7 @@ class QuizActivity : AppCompatActivity() {
         submitButton.setOnClickListener {
             if (!isAnswerSubmitted) {
                 if (selectedAnswer == -1) {
-                    Toast.makeText(this, "Please select an answer.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Please select an answer", Toast.LENGTH_SHORT).show()
                 } else {
                     evaluateAnswer()
                     isAnswerSubmitted = true
@@ -82,9 +82,9 @@ class QuizActivity : AppCompatActivity() {
                     finish()
                 } else {
                     currentQuestionIndex++
-                    loadQuestion()
-                    isAnswerSubmitted = false
                     selectedAnswer = -1
+                    isAnswerSubmitted = false
+                    loadQuestion()
                     submitButton.text = getString(R.string.submit)
                 }
             }
@@ -94,21 +94,21 @@ class QuizActivity : AppCompatActivity() {
     private fun loadQuestion() {
         val q = questions[currentQuestionIndex]
         questionText.text = q.text
+        questionCount.text = getString(R.string.question_progress, currentQuestionIndex + 1, questions.size)
+        progressBar.progress = ((currentQuestionIndex + 1) * 100) / questions.size
 
         q.options.forEachIndexed { i, option ->
             options[i].text = option
             options[i].isEnabled = true
-            options[i].setBackgroundColor(getColor(R.color.default_option)) // Reset colors
+            options[i].setBackgroundColor(getColor(R.color.default_option))
         }
-
-        questionCount.text = getString(R.string.question_progress, currentQuestionIndex + 1, questions.size)
-        progressBar.progress = ((currentQuestionIndex + 1) * 100) / questions.size
     }
 
     private fun highlightSelection(index: Int) {
         options.forEachIndexed { i, button ->
             button.setBackgroundColor(
-                if (i == index) getColor(R.color.selected_option) else getColor(R.color.default_option)
+                if (i == index) getColor(R.color.selected_option)
+                else getColor(R.color.default_option)
             )
         }
     }
